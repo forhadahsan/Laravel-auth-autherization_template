@@ -3,10 +3,11 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RoleController;
+use App\Http\Controllers\frontend\FrontendController;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -21,4 +22,9 @@ Route::middleware('auth')->group(function () {
 
 Route::get('/assign-role', [RoleController::class, 'assign']);
 
+
 require __DIR__.'/auth.php';
+
+// frontend routes
+Route::get('/', [FrontendController::class, 'home'])->name('frontend.home');
+

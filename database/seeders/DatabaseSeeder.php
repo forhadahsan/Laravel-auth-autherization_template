@@ -23,7 +23,7 @@ class DatabaseSeeder extends Seeder
             $adminUser->assignRole('admin');
         }
 
-        // Call other seeders
+        // Call AdminSeeder and UserSeeder 
         $this->call([
             AdminSeeder::class,
             UserSeeder::class,
