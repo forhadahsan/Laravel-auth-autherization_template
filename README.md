@@ -28,29 +28,25 @@ Follow these steps to set up the project on your local machine:
 git clone https://github.com/your-username/your-repo-name.git
 cd your-repo-name
 2️⃣ Install dependencies
-bash
-Copy
-Edit
+
 composer install
 npm install
 3️⃣ Set up environment
-bash
-Copy
-Edit
+
 cp .env.example .env
 php artisan key:generate
 Update your .env database configuration:
 
 env
-Copy
-Edit
-DB_DATABASE=your_db_name
-DB_USERNAME=your_username
-DB_PASSWORD=your_password
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=myApp
+DB_USERNAME=root
+DB_PASSWORD=
 4️⃣ Run migrations and seeders
 bash
-Copy
-Edit
+ 
 php artisan migrate
 php artisan db:seed
 This will:
@@ -61,16 +57,15 @@ Insert a default admin and user account with roles assigned
 
 5️⃣ Run Vite and start the server
 bash
-Copy
-Edit
+ 
 npm run dev
 php artisan serve
 Now open http://127.0.0.1:8000 in your browser.
 
 🧪 Login Credentials (for testing)
 Role	Email	Password
-Admin	admin@example.com	password
-User	user@example.com	password
+Admin	admin@gmail.com	|| password: 12345678
+User	user@gmail.com	password
 
 🧱 Packages Used
 Laravel Breeze – for authentication scaffolding
@@ -84,16 +79,12 @@ Routes, controllers, and views can be protected using role or permission middlew
 
 Example:
 
-php
-Copy
-Edit
 Route::get('/admin', function () {
     return 'Admin Dashboard';
 })->middleware(['auth', 'role:admin']);
 📂 Directory Structure Highlights
 markdown
-Copy
-Edit
+
 - database/
   - seeders/
     - AdminSeeder.php
@@ -108,9 +99,7 @@ A Laravel enthusiast sharing simple but powerful starter projects.
 📜 License
 This project is open-source and available under the MIT License.
 
-yaml
-Copy
-Edit
+
 
 ---
 
@@ -165,28 +154,27 @@ git clone https://github.com/your-username/your-repo-name.git
 cd your-repo-name
 2️⃣ Install dependencies
 bash
-Copy
-Edit
+ 
 composer install
 npm install
 3️⃣ Set up environment
 bash
-Copy
-Edit
+ 
+ 
 cp .env.example .env
 php artisan key:generate
 Update your .env database configuration:
 
 env
-Copy
-Edit
-DB_DATABASE=your_db_name
-DB_USERNAME=your_username
-DB_PASSWORD=your_password
+ 
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=myApp
+DB_USERNAME=root
+DB_PASSWORD=
 4️⃣ Run migrations and seeders
-bash
-Copy
-Edit
+ 
 php artisan migrate
 php artisan db:seed
 This will:
@@ -196,16 +184,14 @@ Create admin and user roles
 Insert a default admin and user account with roles assigned
 
 5️⃣ Run Vite and start the server
-bash
-Copy
-Edit
+ 
 npm run dev
 php artisan serve
 Open your browser at: http://127.0.0.1:8000
 
 🧪 Login Credentials (for testing)
 Role	Email	Password
-Admin	admin@example.com	password
+Admin	admin@gmail.com	password
 User	user@example.com	password
 
 🧱 Packages Used
@@ -216,18 +202,14 @@ Spatie Laravel Permission – for role & permission handling
 🧠 Role Middleware Example
 You can protect routes using roles like this:
 
-php
-Copy
-Edit
+php 
 Route::get('/admin', function () {
     return 'Admin Dashboard';
 })->middleware(['auth', 'role:admin']);
 You can also use @role and @permission in Blade views.
 
 📂 Directory Structure Highlights
-markdown
-Copy
-Edit
+markdown 
 - database/
   - seeders/
     - AdminSeeder.php
