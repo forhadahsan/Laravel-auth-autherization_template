@@ -25,7 +25,7 @@ Follow these steps to set up the project on your local machine:
 ### 1️⃣ Clone the repository
 
 ```bash
-git clone https://github.com/your-username/your-repo-name.git
+[git clone https://github.com/your-username/your-repo-name.git](https://github.com/forhadahsan/Laravel-auth-autherization_template)
 cd your-repo-name
 2️⃣ Install dependencies
 
